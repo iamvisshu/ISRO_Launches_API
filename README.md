@@ -1,4 +1,4 @@
-## ISRO Launches Dashboard  (Using the ISRO API), Created by @iamvisshu - Vishal Vishwakarma
+## ISRO Launches 🚀 Dashboard  (Using the ISRO API) : Created by @iamvisshu - Vishal Vishwakarma
 
 **Table of Contents**
 
@@ -10,7 +10,7 @@
 * License
 * Author
 
-**ISRO Launches Dashboard (Using the ISRO API)**
+**ISRO Launches 🚀 Dashboard (Using the ISRO API)**
 
 This project lets you search for ISRO Launches and displays information about them.
 
@@ -18,7 +18,8 @@ This project lets you search for ISRO Launches and displays information about th
 
 1. Clone this repository using `git clone https://github.com/iamvisshu/ISRO_Launches_API.git`.
 2. Open the project directory in your code editor.
-3. You'll don't need to obtain any ISRO API access token as it's public api. Follow the instructions on https://services.isrostats.in/api/launches/.
+3. You'll don't need to obtain any ISRO API access token as it's public api.
+4. Follow the instructions on https://services.isrostats.in/api/launches/.
 
 **Usage**
 
@@ -30,6 +31,7 @@ This project lets you search for ISRO Launches and displays information about th
 **API**
 
 This project uses the ISRO Web API https://services.isrostats.in/api/launches/.
+
 Please refer this documentation https://isrostats.in/apis to know more about it.
 
 **Contributing**
@@ -42,7 +44,7 @@ We welcome contributions to this project! If you'd like to contribute, please:
 
 **License**
 
-This project is licensed under the [**MIT License**](**https://github.com/iamvisshu/ISRO_Launches_API?tab=MIT-1-ov-file#MIT-1-ov-file**).
+This project is licensed under the Open-source [**MIT License**].
 
 **Author**
 
