@@ -16,7 +16,7 @@ This project lets you search for ISRO Launches and displays information about th
 
 **Installation**
 
-1. Clone this repository using `git clone https://github.com/iamvisshu/isro.git`.
+1. Clone this repository using `git clone https://github.com/iamvisshu/ISRO_Launches_API.git`.
 2. Open the project directory in your code editor.
 3. You'll don't need to obtain any ISRO API access token as it's public api. Follow the instructions on https://services.isrostats.in/api/launches/.
 
