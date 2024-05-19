@@ -42,7 +42,7 @@ We welcome contributions to this project! If you'd like to contribute, please:
 
 **License**
 
-This project is licensed under the [**License Name**](**[License Link]**).
+This project is licensed under the [**MIT License**](**https://github.com/iamvisshu/ISRO_Launches_API?tab=MIT-1-ov-file#MIT-1-ov-file**).
 
 **Author**
 
