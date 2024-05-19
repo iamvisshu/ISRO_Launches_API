@@ -107,3 +107,21 @@ window.addEventListener('DOMContentLoaded', async () => {
         spinner.style.display = 'none'; // Hide the spinner after data is loaded
     }
 });
+
+
+// Get the homepage button element
+const homeButton = document.getElementById("home-button");
+
+// Add an event listener to the homepage button
+homeButton.addEventListener("click", function() {
+    window.location.href = "index.html";
+});
+
+// Get the aboutMe button element
+const aboutMeButton = document.getElementById("aboutMe-button");
+
+// Add an event listener to the aboutMe button
+aboutMeButton.addEventListener("click", function() {
+    window.location.href = "https://iamvisshu.github.io/";
+});
+
