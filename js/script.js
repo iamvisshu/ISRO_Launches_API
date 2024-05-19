@@ -1,61 +1,21 @@
 // Define a variable to store the initial data
 let allLaunches = [];
 
-document.getElementById('get-stats').addEventListener('click', fetchData);
-document.getElementById('search-button').addEventListener('click', performSearch);
-document.getElementById('search-input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        performSearch();
-    }
-});
-
+// Function to fetch data from the API
 async function fetchData() {
-    const statsContainer = document.getElementById('stats');
-    const errorMessage = document.getElementById('error-message');
-    
     try {
-        // Clear previous results and errors
-        statsContainer.innerHTML = '';
-        errorMessage.innerHTML = '';
-        
-        const apiUrl = 'https://services.isrostats.in/api/launches';
-        
-        const response = await fetch(apiUrl);
+        const response = await fetch('https://services.isrostats.in/api/launches');
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
         allLaunches = await response.json(); // Store the fetched data
-        
-        // Sort launches in descending order based on launch date
-        allLaunches.sort((a, b) => new Date(b.LaunchDate) - new Date(a.LaunchDate));
-
-        displayData(allLaunches, statsContainer);
-        
-        // Hide the button after data is fetched
-        document.getElementById('get-stats').style.display = 'none';
+        return allLaunches;
     } catch (error) {
-        errorMessage.innerHTML = 'Failed to fetch data: ' + error.message;
-        console.error('There has been a problem with your fetch operation:', error);
+        throw new Error('Failed to fetch data: ' + error.message);
     }
 }
 
-function performSearch() {
-    const searchQuery = document.getElementById('search-input').value.trim().toLowerCase();
-    const filteredLaunches = allLaunches.filter(launch =>
-        launch.Name.toLowerCase().includes(searchQuery) ||
-        launch.LaunchDate.toLowerCase().includes(searchQuery) ||
-        launch.LaunchType.toLowerCase().includes(searchQuery) ||
-        launch.Payload.toLowerCase().includes(searchQuery) ||
-        launch.SerialNumber.toLowerCase().includes(searchQuery) ||
-        launch.MissionStatus.toLowerCase().includes(searchQuery)
-    );
-
-    const statsContainer = document.getElementById('stats');
-    statsContainer.innerHTML = ''; // Clear previous results
-
-    displayData(filteredLaunches, statsContainer);
-}
-
+// Function to display data tiles
 function displayData(data, container) {
     let row = document.createElement('div');
     row.className = 'row';
@@ -87,3 +47,63 @@ function displayData(data, container) {
         container.appendChild(row);
     }
 }
+
+// Function to perform search
+function performSearch() {
+    const searchQuery = document.getElementById('search-input').value.trim().toLowerCase();
+    const filteredLaunches = allLaunches.filter(launch =>
+        launch.Name.toLowerCase().includes(searchQuery) ||
+        launch.LaunchDate.toLowerCase().includes(searchQuery) ||
+        launch.LaunchType.toLowerCase().includes(searchQuery) ||
+        launch.Payload.toLowerCase().includes(searchQuery) ||
+        launch.SerialNumber.toLowerCase().includes(searchQuery) ||
+        launch.MissionStatus.toLowerCase().includes(searchQuery)
+    );
+
+    const statsContainer = document.getElementById('stats');
+    statsContainer.innerHTML = ''; // Clear previous results
+
+    displayData(filteredLaunches, statsContainer);
+}
+
+// Event listeners for search button and input field
+document.getElementById('search-button').addEventListener('click', performSearch);
+document.getElementById('search-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        performSearch();
+    }
+});
+
+// Load data and display tiles on page load
+window.addEventListener('DOMContentLoaded', async () => {
+    const statsContainer = document.getElementById('stats');
+    try {
+        const data = await fetchData();
+        displayData(data, statsContainer);
+    } catch (error) {
+        document.getElementById('error-message').innerText = 'Failed to fetch data: ' + error.message;
+        console.error('There has been a problem with your fetch operation:', error);
+    }
+});
+
+
+// Show loading spinner when page starts loading
+window.addEventListener('DOMContentLoaded', () => {
+    const spinner = document.getElementById('loading-spinner');
+    spinner.style.display = 'block'; // Show the spinner
+});
+
+// Load data and display tiles on page load
+window.addEventListener('DOMContentLoaded', async () => {
+    const statsContainer = document.getElementById('stats');
+    try {
+        const data = await fetchData();
+        displayData(data, statsContainer);
+    } catch (error) {
+        document.getElementById('error-message').innerText = 'Failed to fetch data: ' + error.message;
+        console.error('There has been a problem with your fetch operation:', error);
+    } finally {
+        const spinner = document.getElementById('loading-spinner');
+        spinner.style.display = 'none'; // Hide the spinner after data is loaded
+    }
+});

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISRO Launches Statistics Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ISRO Launches Statistics Dashboard</h1>
+        <div id="loading-spinner" class="spinner" style="display: none;"></div> <!-- Loading spinner -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-button">Search</button>
+        </div>
+        <div id="stats"></div>
+        <div id="error-message" style="color: red;"></div>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
