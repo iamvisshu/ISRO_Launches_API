@@ -1,4 +1,4 @@
-## ISRO Launches Dashboard  (Using the ISRO API), Created by @iamvisshu - vishal Vishwakarma
+## ISRO Launches Dashboard  (Using the ISRO API), Created by @iamvisshu - Vishal Vishwakarma
 
 **Table of Contents**
 
@@ -23,14 +23,14 @@ This project lets you search for ISRO Launches and displays information about th
 **Usage**
 
 1. Make sure you have your ISRO access token stored securely (if needed, in my case it was not).
-2. Run a local development server.
-3. Open `index.html` (or the main HTML file) in your web browser.
-4. Enter a launch name or vehicle in the search bar and press Enter.
-5. The project should fetch information about the searched launch(s) from the ISRO API and display it on the page.
+2. Open `index.html` (or the main HTML file) in your web browser.
+3. Enter a launch name or vehicle in the search bar and press Enter.
+4. The project should fetch information about the searched launch(s) from the ISRO API and display it on the page.
 
 **API**
 
-This project uses the ISRO Web API https://services.isrostats.in/api/launches/. Please refer this documentation https://isrostats.in/apis to know more about it.
+This project uses the ISRO Web API https://services.isrostats.in/api/launches/.
+Please refer this documentation https://isrostats.in/apis to know more about it.
 
 **Contributing**
 
