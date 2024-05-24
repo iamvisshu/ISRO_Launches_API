@@ -139,3 +139,7 @@ aboutMeButton.addEventListener("click", function() {
     window.location.href = "https://iamvisshu.github.io/";
 });
 
+
+// Footer Year dynamic
+document.getElementById('year').textContent = new Date().getFullYear();
+
