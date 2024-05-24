@@ -58,6 +58,20 @@ body {
     margin-right: 0; /* Remove right margin for the last tile in each row */
 }
 
+/* Add a media query for smaller screens */
+@media screen and (max-width: 600px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .launch-tile {
+        width: 90%; /* or any suitable width */
+        margin: 10px auto;
+    }
+}
+
+
 /* Add styles for the navigation */
 .navigation {
     display: flex;
