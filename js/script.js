@@ -79,6 +79,8 @@ function performSearch() {
 
     displayData(filteredLaunches, statsContainer);
 }
+// Footer Year dynamic
+document.getElementById('year').textContent = new Date().getFullYear();
 
 // Event listeners for search button and input field
 document.getElementById('search-button').addEventListener('click', performSearch);
@@ -139,7 +141,4 @@ aboutMeButton.addEventListener("click", function() {
     window.location.href = "https://iamvisshu.github.io/";
 });
 
-
-// Footer Year dynamic
-document.getElementById('year').textContent = new Date().getFullYear();
 
