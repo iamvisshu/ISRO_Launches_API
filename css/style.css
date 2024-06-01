@@ -184,10 +184,18 @@ footer a:hover {
     }
 }
 
-.image-container img {
-    width: 97%;
-    height: auto;
-    margin-left: 20px; /* Shift left by 20 pixels */
-    margin-right: 20px; /* Shift right by 20 pixels */
+/* CSS for image filler on homepage */
+.image-container {
+    text-align: center; /* Center the image horizontally */
+    margin: 0 20px; /* Add 20px left and right margin */
 }
+
+.image-container img {
+    max-width: 100%; /* Ensure image doesn't overflow container */
+    height: auto;
+}
+
+
+
+
 
