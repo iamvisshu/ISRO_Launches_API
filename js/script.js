@@ -141,4 +141,12 @@ aboutMeButton.addEventListener("click", function() {
     window.location.href = "https://iamvisshu.github.io/";
 });
 
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navButtons = document.getElementById('nav-buttons');
+
+hamburger.addEventListener('click', () => {
+    navButtons.classList.toggle('active');
+});
+
 

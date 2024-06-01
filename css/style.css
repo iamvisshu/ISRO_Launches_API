@@ -73,11 +73,90 @@ body {
 
 
 /* Add styles for the navigation */
+/* Common styles */
 .navigation {
     display: flex;
-    align-items: center; /* Align items vertically */
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
 }
+
+.search-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.search-container input, .search-container button {
+    margin-left: 10px;
+    width: 200px;
+}
+
+/* Set a common height for the search input, search button, and nav buttons */
+.search-container input,
+.search-container button,
+.nav-buttons button {
+    height: 35px; /* Adjust this value as needed */
+    box-sizing: border-box; /* Ensure padding and border are included in the height */
+    font-size: 13px; /* Adjust font size to match */
+}
+
+/* Ensure the width of the search input and button match */
+.search-container input {
+    flex: 1; /* Allow the input to grow */
+}
+
+.search-container button {
+    width: auto; /* Allow the button to size according to its content */
+}
+
+/* Desktop view */
+@media screen and (min-width: 601px) {
+    .nav-buttons {
+        display: flex;
+        gap: 10px; /* Space between buttons */
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+/* Mobile view */
+@media screen and (max-width: 600px) {
+    .nav-buttons {
+        display: none; /* Hide nav buttons by default */
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 100%;
+        height: 4px;
+        background-color: #333;
+        border-radius: 2px;
+    }
+
+    .nav-buttons.active {
+        display: flex; /* Show nav buttons when hamburger is active */
+    }
+
+    .nav-buttons button {
+        width: 90%; /* Ensure buttons take most of the container's width */
+        margin-bottom: 10px;
+    }
+}
+
+
 
 /* Add styles for the buttons */
 button {
@@ -96,24 +175,6 @@ button:hover {
 
 #aboutMe-button {
     margin-left: 10px; /* Add margin to separate it from the Homepage button */
-}
-
-/* Add styles for the search box */
-.search-container {
-    display: flex;
-    margin-top: 20px;
-    margin-left: auto; /* Push the search box and button to the right */
-	align-items: flex-end; /* Adjusted alignment */
-}
-
-#search-input {
-    padding: 5px;
-    width: 200px;
-}
-
-#search-button {
-    padding: 5px 10px;
-    margin-left: 5px;
 }
 
 /* Add styles for the spinner */

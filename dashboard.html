@@ -28,14 +28,25 @@
     <div class="container">
         <h1>ISRO Launches 🚀 Dashboard</h1>
 		<h3>Designed by @iamvisshu</h3>
+
         <div class="navigation">
-            <button id="home-button">Homepage</button> <!-- Home button -->
-			<button id="aboutMe-button">AboutMe</button> <!-- AboutMe button -->
+            <div class="nav-left">
+                <div class="hamburger" id="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="nav-buttons" id="nav-buttons">
+                    <button id="home-button">Homepage</button>
+                    <button id="aboutMe-button">AboutMe</button>
+                </div>
+            </div>
             <div class="search-container">
                 <input type="text" id="search-input" placeholder="Search anything...">
                 <button id="search-button">Search</button>
             </div>
         </div>
+
         <div id="loading-spinner" class="spinner" style="display: none;"></div> <!-- Loading spinner -->
         <div id="stats"></div>
         <div id="error-message" style="color: red;"></div>
